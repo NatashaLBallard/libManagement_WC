@@ -1,0 +1,143 @@
+body{
+    font-family: 'Comfortaa', cursive;
+
+}
+
+body, html {
+    height: 100%;
+    margin: 25px;
+}
+
+h1.h1index{
+    color:#ffffff;
+    align-content: center;
+    text-align: center;
+    font-size:75px;
+}
+
+h2.h2index{
+    color: #353535;
+    align-content: center;
+    text-align: center;
+    font-size:60px;
+}
+
+p.index{
+    color:#ffffff;
+    align-content: center;
+    text-align: center;
+    font-size:50px;
+}
+
+/*Responsive Resizing + Rounded Borders for Pictures */
+
+img {
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 8px;
+}
+
+/*Rounded Borders for Pictures */
+img:hover {
+    box-shadow: 0 0 4px 1px rgba(0, 140, 186, 0.5);
+}
+
+/*Thumbnail Design for Flags*/
+img.img-thumbnail {
+    border-radius: 8px;
+    width: 100px;
+    height: 50px;
+}
+
+img.img-grid{
+    max-width: 50%;
+    max-height: auto;
+}
+
+
+
+.jumbopic-list{
+    background-image: url("https://campustechnology.com/~/media/EDU/CampusTechnology/Images/2017/04/20170419librariestease.jpg");
+    height:200px;
+
+}
+
+.jumbotron-add{
+    background-image: url("http://www.wisebread.com/files/fruganomics/blog-images/woman-returning-library-books-iStock_000020495760Small.jpg");
+
+}
+.jumbotron-borrow{
+    background-image: url("https://library.rit.edu/sites/library.rit.edu/files/borrow_a_laptop.jpg");
+
+}
+.jumbotron-return{
+    background-image: url("http://s3.amazonaws.com/libapps/accounts/7607/images/file0001169190539.jpg");
+
+}
+
+.jumbotron h1{
+    color: #ffffff;
+    text-align: center;
+    background-color: grey;
+    font-size:100px;
+}
+
+.jumbotron p{
+    color: #ffffff;
+    text-align: center;
+    background-color: #FF814E;
+    font-size:25px;
+}
+
+
+.card {
+    display:inline-block;
+    padding: 10px;
+    align-content: center;
+    text-align: center;
+}
+
+.bg{
+    background-image: url("https://hdwallsource.com/img/2016/7/library-wallpaper-50371-52062-hd-wallpapers.jpg");
+
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size:100px;
+}
+
+table{
+    text-align: center;
+    border:3px;
+    width:50%;
+    height:5%;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FF814E;
+}
+
+.h1-recipe {
+    text-transform: capitalize;
+}
+
+.grid-center{
+    text-align: center;
+}
+
+.time-columns {
+    -webkit-column-width: 15px; /* Chrome, Safari, Opera */
+    -moz-column-width: 15px; /* Firefox */
+    column-width: 25px;
+    text-align: center;
+}

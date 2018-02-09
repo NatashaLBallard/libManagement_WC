@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add Book</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+<body>
+
+
+<!--Start of NAVIGATION MENU-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">JBC LIBRARY MANAGEMENT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/list}">LIST </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/add}">ADD<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/borrow}">BORROW</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/return}">RETURN</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--End of NAVIGATION MENU-->
+
+
+<br/><br/>
+<p><strong>Enter in information and click "Submit".</strong></p>
+
+<form action="#"
+      th:action="@{/process}"
+      th:object="${library}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+
+
+    <strong>Title: </strong>
+    <input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span><br/><br/>
+
+    <strong>Author: </strong>
+    <input type="text" th:field="*{author}" />
+    <span th:if="${#fields.hasErrors('author')}"
+          th:errors="*{author}"></span><br/><br/>
+
+    <strong>Year: </strong>
+    <input type="text" th:field="*{year}" />
+    <span th:if="${#fields.hasErrors('year')}"
+          th:errors="*{year}"></span><br/><br/>
+
+    <strong>ISBN: </strong>
+    <input type="text" th:field="*{isbn}" />
+    <span th:if="${#fields.hasErrors('isbn')}"
+          th:errors="*{isbn}"></span><br/><br/>
+
+    <strong>Image: </strong>
+    <input type="text" th:field="*{image}" />
+    <span th:if="${#fields.hasErrors('image')}"
+          th:errors="*{image}"></span><br/><br/>
+
+    <select name="text" th:field="*{borrowed}"> <!--Supplement an id here instead of using 'text'-->
+        <option th:value="borrow">borrow</option>
+        <option th:value="return">return</option>
+    </select>
+
+
+
+    <input type="submit" value="Submit" />
+
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

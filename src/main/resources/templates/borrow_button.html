@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>BORROW a BOOK</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+<body>
+
+
+<!--Start of NAVIGATION MENU-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">JBC LIBRARY MANAGEMENT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/list}">LIST </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/add}">ADD</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/borrow}">BORROW<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/return}">RETURN</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--End of NAVIGATION MENU-->
+
+
+
+<br/><br/>
+<p><strong>Click "Borrow" to confirm.</strong></p>
+
+
+
+<table>
+<tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Year</th>
+    <th>ISBN</th>
+    <!--<th>Image</th>-->
+    <th>Borrowed</th>
+</tr>
+
+    <td  text="${library.title}"></td>
+    <td  text="${library.author}"></td>
+    <td  text="${library.year}"></td>
+    <td  text="${library.isbn}"></td>
+    <td  text="${library.borrowed}" ></td>
+    <!--<a th:href="@{'//'+${jbcLibrary.image}}" target="_blank"><span th:text="${jbcLibrary.image}"></span></a><br/>-->
+
+</table>
+
+
+<br/>
+
+
+<form th:id="${library.id}" th:action="@{/process_button}">
+    <input type="submit"  th:name="status" th:value="borrow" th:class="button" th:text="${library.borrowed}" /></form>
+
+
+
+</body>
+</html>
